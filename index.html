@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Angular part 2</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="angular.min.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="script.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-lg-offset-4">
+		<label>Limit</label>
+		<input type="text" name="" ng-model="limitRecord">
+		<label>OrderBy</label>
+		<input type="text" name="" ng-model="orderbyThing">
+		<table class="table">
+		<caption>Chat table</caption>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nickname</th>
+				<th>Message</th>
+				<th>Time</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="record in objects | limitTo:limitRecord | orderBy:orderbyThing" >
+				<td>{{record.id }}</td>
+				<td>{{record.user}}</td>
+				<td>{{record.msg}}</td>
+				<td>{{record.timeline}}</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	</div>
+</body>
+</html>
